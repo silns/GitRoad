@@ -1,0 +1,55 @@
+>>> 六级标题 <<<
+# 一级标题
+## 二级标题
+### 三级标题
+...
+
+
+>>> 列表 <<<
+无序列表：- 或者 * 开头
+eg:
+  - item1
+  - item2
+  - item3
+  * item1
+  * item2
+  * item3
+有序列表：1. 2. 3. 开头
+eg:
+  1. item1
+  2. item2
+  3. item3
+
+
+
+>>> 引用 <<<
+文本前加大于号 >
+eg:
+  > this is reference
+
+
+>>> 插入图片和连接 <<<
+图片：![](){ImgCap}{/ImgCap}
+链接：[]()
+eg:
+  ![ImageName](http://image_location/imageName)
+  [DisplayName](http://link_url)
+
+
+
+>>> 粗体与斜体 <<<
+两个 * 圈起来为粗体
+一个 * 圈起来为斜体
+
+
+>>> 表格 <<<
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+
+
+
+

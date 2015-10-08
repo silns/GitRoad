@@ -1,0 +1,83 @@
+全局配置
+git config --global user.name "silns"
+git config --global user.email "310804919@qq.com"
+bitbucket中邮箱应该是2013118129@hstc.edu.cn吧
+git config --global core.editor atom
+
+git init    # 初始化仓库
+git remote add origin git@bitbucket.org:silns/gitroad.git
+git push -u origin --all    # 首次推送添加-u参数，以后不需要
+git push -u origin --tags    # 推送所有tags
+
+git status查看暂存区信息
+Untracked files:
+   git add <file>将文件添加到暂存区中
+Changeds to be committed:
+   git rm --cached <file>将文件从stage中移出
+       new ---- NewFile.txt
+       modify ---- ModifyFile.txt
+   git checkout -- <file>取消修改
+
+将文件移出stage的另一个方法
+git reset HEAD <file>
+特殊情况可以简写为
+git reset
+
+如果你修改了一个文件，并把它添加到stage中，你可以使用git checkut -- <file>将文件移出stage
+git commit --amend  # 将最后一次递交替换为本次递交
+
+查看递交历史
+git log --pretty=oneline
+
+撤销某次提交
+git reset --soft HEAD^
+
+
+push    将本地更新上传到服务器
+fetch    从服务器拉取最新版本到本地，添加到stage中，不自动合并
+pull      从服务器拉取最新版本到本地，并进行自动合并
+git fetch
+git fetch origin
+git fetch origin master
+git fetch origin master:local_master
+
+
+
+Merge合并 =============================================
+1. 直接合并（straight merge）
+没参数的情况下merge是fast-forward的，即git将master分支的指针直接移到dev的最前方
+git merge dev
+
+2. 压合合并（squashed commits）
+将一条分支上的若干个提交条目压合成一个提交条目，提交到另一个分支的末梢
+git merge --squash dev
+此时所有提交的内容只是放置到了工作区并暂存，没没有进行提交，用户需要自己使用commit进行提交操作。
+
+3. 拣选合并（cherry-picking）
+拣选每一条分支上的某个提交条目的改动到当前分支上。
+每一次提交都会产生一个全局唯一的提交名称，利用这个名称就可以进行拣选提交。
+比如在dev上的某个提交叫：321d76f
+把它合并到master中：
+git checkout master
+git cherry-pick 321d76f
+要拣选多个提交，可以给git cherry-pick命令传递-n选项，比如：
+git cherry-pick –n 321d76f
+这样在拣选了这个改动之后，进行暂存而不立即提交，接着可以进行下一个拣选操作，一旦拣选完需要的各个提交，就可以一并提交。
+
+
+=======================================
+冲突处理：当两条分支对同一个文件的同一个文本块进行了不同的修改，并试图合并时，Git不能自动合并的，称之为冲突(conflict)。解决冲突需要人工处理。
+需要手工进行处理操作，删除标记、合并代码后，用户可以重新add，然后commit来进行更新。
+
+分支重命名：
+git branch -m oldname newname
+-m  表示不覆盖现有分支
+-M  表示覆盖现有分支
+
+
+
+
+排除文件
+创建.gitignore，并在里面写语法
+
+
