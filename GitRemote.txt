@@ -1,0 +1,24 @@
+添加远程主机
+git remote add origin git@bitbucket.org:silns/gitroad.git
+git remote add develop git@bitbucket.org:silns/gitroad.git
+列出所有远程主机
+git remote
+origin
+查看所有远程主机的网址
+git remote -v
+develop git@bitbucket.org:silns/gitroad.git (fetch)
+develop git@bitbucket.org:silns/gitroad.git (push)
+origin  git@bitbucket.org:silns/gitroad.git (fetch)
+origin  git@bitbucket.org:silns/gitroad.git (push)
+clone时，如果想要选择origin之外的其他主机，则需要使用-o选项
+git clone -o develop git@bitbucket.org:silns/gitroad.git
+查看远程主机的详细信息
+git remote show -n origin
+重命名远程主机
+git remote rename  develop development
+删除远程主机
+git remote remove development
+
+
+
+
