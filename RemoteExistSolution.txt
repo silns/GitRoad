@@ -1,0 +1,9 @@
+fatal: remote origin already exists.
+
+git remote rm origin
+删除origin主机，然后再重新添加主机
+
+之前的origin是使用bitbucket的，后来bitbucket一直连接不上，所有只能把仓库托送到github了
+git remote -v查看主机情况
+git remote rm origin删除本来的bitbucket origin主机
+git remote add orgin git@github.com:silns/gitroad.git添加新才github origin主机
