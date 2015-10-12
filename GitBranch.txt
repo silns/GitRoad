@@ -1,0 +1,6 @@
+查看所有分支和当前使用分支
+git branch
+新建并切换到新分支
+git branch -b branchName
+切换到别的分支
+git branch branchName

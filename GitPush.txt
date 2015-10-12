@@ -1,0 +1,23 @@
+格式：git push <remoteName> <localBranch>:<remoteBranch>
+git push origin master:master
+删除远程分支
+git push orign :master
+相当于：git push origin --delete master
+
+设置追踪关系，这样以后就可以使用push自动推送到默认主机中
+simple方式：git push -u origin master
+git push会自动推送master到origin/master
+matching方式：。。。
+配置不同方式：
+git config --global push.default matching
+git config --global push.default simple（2.0后默认）
+
+将本地所有分支推送到主机origin
+git push --all origin
+
+如果远程主机的版本比本地版本更新，推送时Git会报错，要求先在本地做git pull合并差异，然后再推送到远程主机。这时，如果你一定要推送，可以使用--force选项。
+git push --force origin
+
+
+提示：git push不会推送标签tag，除非使用--tags选项
+git push origin --tags
