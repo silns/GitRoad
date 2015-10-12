@@ -1,0 +1,17 @@
+先将远程的某个分支取回到本地，在与本地分支合并
+git pull <remoteName> <remoteBranch>:<localBranch>
+git pull origin master:master
+
+合并到当前分支，则后面本地分支可省略
+git pull origin master
+
+建立追踪关系（tracking）
+git branch --set-upstream master origin/master
+这样将当前分支推送到远程主机就不需要指明远程分支名了
+git pull origin
+
+
+git pull实际上就是git fetch+git merge
+git pull -p等价于
+git fetch --prune origin
+git fetch -p

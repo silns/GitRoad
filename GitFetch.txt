@@ -1,0 +1,8 @@
+Fetch将远程更新取回本地
+git fetch <remoteName>
+git fetch <remoteName> <remoteBranch>
+
+git branch -r查看远程分支选项，-a查看所有分支选项
+git branch -r
+git branch -a
+
